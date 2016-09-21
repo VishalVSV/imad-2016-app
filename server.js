@@ -99,7 +99,12 @@ app.get('/', function (req, res) {
 
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
-    res.send(createHtml(articles[articleName]));
+    try {
+         res.send(createHtml(articles[articleName]));
+    }
+    catch(e) {
+        
+    }
 });
 
 app.get('/ui/style.css', function (req, res) {
