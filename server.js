@@ -103,7 +103,7 @@ app.get('/:articleName', function (req, res) {
          res.send(createHtml(articles[articleName]));
     }
     catch(e) {
-        res.sed("404 Page not found");
+        res.send("404 Page not found");
     }
 });
 
