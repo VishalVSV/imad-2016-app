@@ -5,10 +5,7 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var appSize = '300%';
-if (navigator.appVersion.toLowerCase().indexOf("ipad") >= 0) {
-    appSize = '500%';
-}
+
 
 var articles ={
   'article-one' : {
@@ -49,8 +46,7 @@ var articles ={
     content:`
         <p>
             Hindi Exam is today!!!
-        </p>`,
-    size:appSize
+        </p>`
 }
 };
 
