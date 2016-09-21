@@ -4,17 +4,20 @@ console.log('Loaded!');
 var img = document.getElementById('madi');
 var marginL = 0;
 function moveLeft () {
-    if (marginL<500) {
+    if (marginL<=500) {
         marginL += 1;
         if (marginL <= 500) {
           img.style.marginLeft = marginL + "px";   
         }
     }
-    else {
+    else if (marginL>=0) {
         marginL -= 1;
         if (marginL <= 0) {
           img.style.marginLeft = marginL + "px";   
         }
+    }
+    else{
+        clearInterval(inter);
     }
 }
 img.onclick = function () {
