@@ -13,4 +13,5 @@ button.onclick = function (){
       }  
     };
 };
-req.open('GET',"http://vishalvsv.imad.hasura-app.io/counter");
+req.open('GET',"http://vishalvsv.imad.hasura-app.io/counter",true);
+req.send(null);
