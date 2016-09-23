@@ -1,26 +1,15 @@
-console.log('Loaded!');
+var button = document.getElementById('counter');
 
-//changin img stuff
-var img = document.getElementById('madi');
-var marginL = 0;
-function moveLeft () {
-    if (marginL<=500) {
-        marginL += 1;
-        if (marginL <= 500) {
-          img.style.marginLeft = marginL + "px";   
-        }
-    }
-    else if (marginL>=0) {
-        marginL -= 1;
-        if (marginL <= 0) {
-          img.style.marginLeft = marginL + "px";   
-        }
-    }
-    else{
-        clearInterval(inter);
-    }
-}
-img.onclick = function () {
-    var inter = setInterval(moveLeft,50);
+button.onclick = function (){
+    var req = XMLHttpRequest();
     
+    req.onreadystatechange = function () {
+      if(req.readystat === XMLHttpRequest.DONE) {
+          if(req.status === 200) {
+              var counter = req.responseText;
+              var span = document.getElementById('count');
+              span.innerHtml = counter.toString();
+          }
+      }  
+    };
 };
