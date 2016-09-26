@@ -32,3 +32,8 @@ body {
 #index {
     font-size:800%;
 }
+
+.solid {
+    border-style: solid;
+    
+}
