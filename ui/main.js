@@ -60,7 +60,6 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               }
               var chm = document.getElementById('chmes');
               chm.innerHTML = list;
-              nameInput.value = "";
           }
       }  
     };
