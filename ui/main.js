@@ -56,14 +56,16 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               names = JSON.parse(names);
               var list = '';
               for (var x = 0;x<names.length;x++){
-                  list += "<p>" + names[x] + '</p>';
+                  if (names[x] !== null) {
+                     list += "<p>" + names[x] + '</p>';
+                  }
               }
               var chm = document.getElementById('chmes');
               chm.innerHTML = list;
           }
       }  
     };
-    name =nameInput.value;
+    name ='';
     req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+name,true);
     req.send(null);
 },1000);
