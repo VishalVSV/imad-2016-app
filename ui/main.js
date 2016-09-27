@@ -9,6 +9,7 @@ var button = document.getElementById('counter');
               var counter = req.responseText;
               var span = document.getElementById('count');
               span.innerHTML = counter.toString();
+              
           }
       }  
     };
@@ -35,6 +36,7 @@ submit.onclick = function () {
               }
               var chm = document.getElementById('chmes');
               chm.innerHTML = list;
+              nameInput.value = "";
           }
       }  
     };
@@ -58,6 +60,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               }
               var chm = document.getElementById('chmes');
               chm.innerHTML = list;
+              nameInput.value = "";
           }
       }  
     };
