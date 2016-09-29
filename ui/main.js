@@ -18,6 +18,7 @@ var button = document.getElementById('counter');
 //};
 
 var nameInput = document.getElementById('name');
+var chname=document.getElementById('chname');
 var name = nameInput.value;
 var submit = document.getElementById('submit');
 submit.onclick = function () {
@@ -41,7 +42,8 @@ submit.onclick = function () {
       }  
     };
     name =nameInput.value;
-    req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+name,true);
+    var acname =chname.value;
+    req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+':'+name,true);
     req.send(null);
     
     
