@@ -40,5 +40,6 @@ body {
 
 #chmes {
     font-size:20px;
+    overflow:auto;
 }
 
