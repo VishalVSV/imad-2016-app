@@ -46,9 +46,14 @@ submit.onclick = function () {
     if(acname===''){
         acname='Anonymous';
     }
-    req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+':'+name,true);
-    req.send(null);
-    
+    if (name !=='/clear') {
+        req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+':'+name,true);
+        req.send(null);
+    }
+    else{
+        var chm = document.getElementById('chmes');
+        chm.innerHTML = '';
+    }
     
 };
 
