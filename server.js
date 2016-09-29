@@ -106,9 +106,11 @@ app.get('/counter', function (req, res) {
 
 var names = [];
 app.get('/submit-message',function (req,res) {
-    var name = req.query.name;
-    names.push(name);
+    if(req.query.name!==null){
+     var name = req.query.name;
+     names.push(name);
     res.send(JSON.stringify(names));
+    }
 });
 
 app.get('/:articleName', function (req, res) {
