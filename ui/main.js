@@ -43,6 +43,9 @@ submit.onclick = function () {
     };
     name =nameInput.value;
     var acname =chname.value;
+    if(acname===null){
+        acname='Anonymous';
+    }
     req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+':'+name,true);
     req.send(null);
     
