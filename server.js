@@ -96,6 +96,10 @@ var createHtml = function(data) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+app.get('/chat',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','Chathtml'));
+});
 var counter = 0;
 
 app.get('/counter', function (req, res) {
