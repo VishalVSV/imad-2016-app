@@ -98,7 +98,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/chat',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','Chathtml'));
+    res.sendFile(path.join(__dirname,'ui','Chat.html'));
 });
 var counter = 0;
 
