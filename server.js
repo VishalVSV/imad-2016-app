@@ -28,8 +28,13 @@ var names = [];
 app.get('/submit-message',function (req,res) {
     if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
      var name = req.query.name;
-     names.push(name);
-    res.send(JSON.stringify(names));
+     if (name === "") {
+         
+     }
+     else{
+        names.push(name);
+        res.send(JSON.stringify(names));
+     }
     }
 });
 
