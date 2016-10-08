@@ -96,10 +96,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
-
 app.get('/chat',function(req,res){
     res.sendFile(path.join(__dirname,'ui','Chat.html'));
 });
