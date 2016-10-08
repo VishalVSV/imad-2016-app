@@ -67,7 +67,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               names = JSON.parse(names);
               var list = '';
               for (var x = 0;x<names.length;x++){
-                  if (names[x] !== null || names[x] !== "" || names[x] !== " ") {
+                  if (names[x].trim() !== null || names[x].trim() !== "" || names[x].trim() !== " ") {
                      list += "<p class='chmes'>" + names[x] + '</p>';
                   }
               }
