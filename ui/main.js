@@ -74,7 +74,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               
               var chm = document.getElementById('chmes');
               if (chm.innerHTML!==list){
-                console.log("found");
+                console.log(list);
                 chm.innerHTML = list;
               }
           }
