@@ -63,6 +63,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
     req.onreadystatechange = function () {
       if(req.readyState === XMLHttpRequest.DONE) {
           if(req.status === 200) {
+              console.log("worked");
               var names = req.responseText;
               names = JSON.parse(names);
               var list = '';
