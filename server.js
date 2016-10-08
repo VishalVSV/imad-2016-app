@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-vario = require('socket.io');
+var io = require('socket.io');
 
 var app = express();
 app.use(morgan('combined'));
@@ -95,6 +95,10 @@ var createHtml = function(data) {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
 
 app.get('/chat',function(req,res){
