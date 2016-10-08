@@ -87,6 +87,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
       }  
     };
     name ='';
+    
     req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+name,true);
     req.send(null);
 },1000);
