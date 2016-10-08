@@ -71,8 +71,11 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                      list += "<p class='chmes'>" + names[x] + '</p>';
                   }
               }
+              
               var chm = document.getElementById('chmes');
-              chm.innerHTML = list;
+              if (chm.innerHTML!==list){
+                chm.innerHTML = list;
+              }
           }
       }  
     };
