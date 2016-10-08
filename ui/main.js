@@ -70,7 +70,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               for (var x = 0;x<names.length;x++){
                 //if (names[x].trim() !== null || names[x].trim() !== "" || names[x].trim() !== " ") {
                     console.log("'"+names[x]+"'");
-                    if (names[x]===''){
+                    if (names[x]==='' || names[x] === null){
                         
                     }else{
                      list += "<p class='chmes'>" + names[x] + '</p>';
