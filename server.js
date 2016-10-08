@@ -28,7 +28,7 @@ var names = [];
 app.get('/submit-message',function (req,res) {
     if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
      var name = req.query.name;
-     if (name === "") {
+     if (name === "" || name === null) {
          
      }
      else{
