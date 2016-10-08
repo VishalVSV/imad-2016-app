@@ -1,8 +1,62 @@
 <!doctype html>
+
+<!--var articles ={
+  'article-one' : {
+    title:'Article One | VishalVSV',
+    heading:'Article One',
+    date: 'Sep 21 2016',
+    content:`
+        <p>
+            Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
+        </p>
+        
+        <p>
+            Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
+        </p>
+        
+        <p>
+            Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
+        </p>
+        
+        <p>
+            Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
+        </p>
+    `
+},  
+  'article-two' : {
+    title:'Article Two | VishalVSV',
+    heading:'Article Two',
+    date: 'Sep 23 2016',
+    content:`
+        <p>
+            English Literature Exam is today!!!
+        </p>`
+},
+  'article-three' : {
+    title:'Article Three | VishalVSV',
+    heading:'Article Three',
+    date: 'Sep 26 2016,',
+    content:`
+        <p>
+            Hindi Exam is today!!!
+        </p>`
+}
+};
+
+
+var createHtml = function(data) {
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    
+    
+    var html = `
+    <!doctype html>
 <html>
     <head>
         <title>
-            Article one | VishalVSV
+            ${title}
         </title>
         <meta name='viewport' content='width=device-width,initial-scale=1'>
         <link href="/ui/style.css" rel="stylesheet" />
@@ -17,26 +71,20 @@
             <hr/>
             <div>
                 <h3>
-                    Article one:
+                    ${heading}
                 </h3>
             </div>
             <div>
-                Sep 18 2016
+                ${date}
             </div>
             <div>
-                <p>
-                    Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
-                </p>
-                <p>
-                    Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
-                </p>
-                <p>
-                    Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
-                </p>
-                <p>
-                    Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!Blog Beginings!!
-                </p>
+                ${content}
             </div>
         </div>
     </body>
 </html>
+    `;
+    return html;
+};
+-->
+
