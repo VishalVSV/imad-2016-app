@@ -34,7 +34,11 @@ submit.onclick = function () {
               names = JSON.parse(names);
               var list = '';
               for (var x = 0;x<names.length;x++){
+                  if (names[x] === '' || names[x] === null) {
+                      
+                  }else{
                   list += "<p class='chmes'>" + names[x] + '</p>';
+                  }
               }
               var chm = document.getElementById('chmes');
               chm.innerHTML = list;
