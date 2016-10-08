@@ -59,7 +59,7 @@ submit.onclick = function () {
 };
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
-    
+    console.log("looped");
     req.onreadystatechange = function () {
       if(req.readyState === XMLHttpRequest.DONE) {
           if(req.status === 200) {
