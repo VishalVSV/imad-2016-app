@@ -6,9 +6,9 @@ var e = require('events');
 var app = express();
 app.use(morgan('combined'));
 
-
-
-
+app.on('connection', function (stream) {
+  console.log("*=============================================*");
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
