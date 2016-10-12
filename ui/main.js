@@ -18,6 +18,14 @@ var cnt =1;
     req.send(null);
 //};
 
+if (!!window.EventSource) {
+  var source = new EventSource('http://vishalvsv.imad.hasura-app.io/server.js');
+} else {
+  // Result to xhr polling :(
+}
+
+
+
 var nameInput = document.getElementById('name');
 var chname=document.getElementById('chname');
 var name = nameInput.value;
@@ -63,6 +71,9 @@ submit.onclick = function () {
 };
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
+    source.addEventListener('open', function(e) {
+      console.log('Opened');
+    }, false);
     console.log("looped");
     req.onreadystatechange = function () {
       if(req.readyState === XMLHttpRequest.DONE) {
