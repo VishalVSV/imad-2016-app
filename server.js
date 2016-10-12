@@ -37,6 +37,15 @@ app.get('/submit-message',function (req,res) {
      }
      else{
         names.push(name);
+        var namesRefined = [];
+        for(k=0;k<names.length;k++){
+            if (names[k] === null) {
+            
+            }else{
+                namesRefined.push(names[k]);
+            }
+        }
+        console.log(namesRefined);
         res.send(JSON.stringify(names));
      }
     }
