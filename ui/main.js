@@ -86,10 +86,10 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                 //if (names[x].trim() !== null || names[x].trim() !== "" || names[x].trim() !== " ") {
                     console.log("'"+names[x]+"'");
                     if (names[x].trim()==='' || names[x] === null){
-                        
+                        console.log(names[x]);
                     }else{
                         console.log('added');
-                     list += "<p class='chmes'>" + names[x] + '</p>';
+                        list += "<p class='chmes'>" + names[x] + '</p>';
                     }
                 //}
                 
