@@ -102,7 +102,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               }
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
-                chm.innerHTML = list;
+                chm.innerHTML = '<br/>' + list;
               }
           }
       }  
