@@ -85,7 +85,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               for (var x = 0;x<names.length;x++){
                 //if (names[x].trim() !== null || names[x].trim() !== "" || names[x].trim() !== " ") {
                     console.log("'"+names[x]+"'");
-                    if (names[x]==='' || names[x] === null){
+                    if (names[x].trim()==='' || names[x] === null){
                         
                     }else{
                      list += "<p class='chmes'>" + names[x] + '</p>';
@@ -95,7 +95,10 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               }
               
               var chm = document.getElementById('chmes');
-              console.log(list);
+              //console.log(list);
+              for (f = 0;f<list.length;f++){
+                
+              }
               if (chm.innerHTML!==list){
                 console.log(list);
                 chm.innerHTML = list;
