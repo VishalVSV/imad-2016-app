@@ -74,7 +74,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
     source.addEventListener('open', function(e) {
       console.log('Opened');
     }, false);
-    console.log("looped");
+    //console.log("looped");
     req.onreadystatechange = function () {
       if(req.readyState === XMLHttpRequest.DONE) {
           if(req.status === 200) {
@@ -88,6 +88,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                     if (names[x].trim()==='' || names[x] === null){
                         
                     }else{
+                        console.log('added');
                      list += "<p class='chmes'>" + names[x] + '</p>';
                     }
                 //}
