@@ -89,7 +89,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                         console.log(names[x]);
                     }else{
                         console.log('added');
-                        list += "<p class='chmes'>" + names[x] + '</p>';
+                        list += "<p class=\"chmes\">" + names[x] + '</p>';
                     }
                 //}
                 
