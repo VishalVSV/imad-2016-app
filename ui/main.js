@@ -45,7 +45,7 @@ submit.onclick = function () {
                   if (names[x] === '' || names[x] === null) {
                       
                   }else{
-                  list += "<p class='chmes'>" + names[x] + '</p>';
+                  list += '<p class="chmes">' + names[x] + '</p>';
                   }
               }
               var chm = document.getElementById('chmes');
