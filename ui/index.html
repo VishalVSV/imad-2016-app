@@ -3,10 +3,38 @@
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
         <title>Vishal's Site</title>
+        <style>
+            ul.nav {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li.nav {
+                float: left;
+            }
+
+            li.nav a.nav {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            /* Change the link color to #111 (black) on hover */
+            li.nav a:hover {
+                background-color: #111;
+            }
+        </style>
     </head>
     <body>
         <h3>This site has been visited  <span id='count'>0</span> times</h3>
-        <a href='/chat'>Chat</a>
+        <ul class='nav'>
+            <li class='nav'><a class='nav' href='/chat'>Chat</a></li>
+        </ul>
         <div class='container'>
             <div class='center'>
                 <img src='https://pbs.twimg.com/profile_images/783124337729474560/a_6QB8DG.jpg' id='madi' />
