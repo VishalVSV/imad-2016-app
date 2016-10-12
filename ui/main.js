@@ -49,7 +49,7 @@ submit.onclick = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              chm.innerHTML = list;
+              chm.innerHTML = '<br/>' + list;
               nameInput.value = "";
           }
       }  
