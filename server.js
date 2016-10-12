@@ -39,7 +39,7 @@ app.get('/submit-message',function (req,res) {
         names.push(name);
         var namesRefined = [];
         for(k=0;k<names.length;k++){
-            if (names[k] === null) {
+            if (names[k] === null || names[k] === undefined) {
             
             }else{
                 namesRefined.push(names[k]);
