@@ -116,7 +116,11 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                 if (isActiv === true) {
                     document.getElementById("chtitle").innerHTML = "Vishal's Chat";
                 }else{
-                    document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
+                    if (newMes === undefined) {
+                        
+                    }else {
+                        document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
+                    }
                 }
                 
                 chm.innerHTML = '' + list;
