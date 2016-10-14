@@ -112,19 +112,19 @@ submit.submit = function () {
     }
     
 };
-document.onkeypress = keyPress;
 
-function keyPress(e){
-    var x = e || window.event;
-    var key = (x.keyCode || x.which);
-    if(key == 13 || key == 3){
-        submit.onclick();      
-    }
-}
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
     var isActiv;
-    
+    document.onkeypress = keyPress;
+
+    function keyPress(e){
+        var x = e || window.event;
+        var key = (x.keyCode || x.which);
+        if(key == 13 || key == 3){
+            submit.onclick();      
+        }
+    }
     window.onfocus = function () { 
       isActiv = true; 
     }; 
