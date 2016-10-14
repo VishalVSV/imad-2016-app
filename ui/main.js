@@ -59,9 +59,12 @@ submit.onclick = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              list = list.replace('/*','<strong>');
-              list = list.replace('*/','</strong>');
-              splChange(list);
+              str = str.replace('/*','<strong>');
+              str = str.replace('*/','</strong>');
+              str = str.replace('/~','<i>');
+              str = str.replace('~/','</i>');
+              str = str.replace('/-','<u>');
+              str = str.replace('-/','</u>');
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -102,7 +105,12 @@ submit.submit = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              splChange(list);
+              str = str.replace('/*','<strong>');
+              str = str.replace('*/','</strong>');
+              str = str.replace('/~','<i>');
+              str = str.replace('~/','</i>');
+              str = str.replace('/-','<u>');
+              str = str.replace('-/','</u>');
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -184,7 +192,12 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                         document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
                     }
                 }
-                splChange(list);
+                str = str.replace('/*','<strong>');
+                str = str.replace('*/','</strong>');
+                str = str.replace('/~','<i>');
+                str = str.replace('~/','</i>');
+                str = str.replace('/-','<u>');
+                str = str.replace('-/','</u>');
                 chm.innerHTML = '' + list;
               }
           }
