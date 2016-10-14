@@ -48,11 +48,13 @@ submit.onclick = function () {
                   if (names[x] === '' || names[x] === null) {
                       
                   }else{
-                  list += '<p class="chmes">' + names[x] + '</p>';
+                    list += '<p class="chmes">' + names[x] + '</p>';
                   }
               }
               var chm = document.getElementById('chmes');
-              chm.innerHTML = '' + list;
+              list = list.replace('/*','<strong>');
+              list = list.replace('*/','</strong>');
+              chm.innerHTML = list;
               nameInput.value = "";
           }
       }  
@@ -92,7 +94,9 @@ submit.submit = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              chm.innerHTML = '' + list;
+              list = list.replace('/*','<strong>');
+              list = list.replace('*/','</strong>');
+              chm.innerHTML = list;
               nameInput.value = "";
           }
       }  
