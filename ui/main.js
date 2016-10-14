@@ -76,6 +76,12 @@ submit.onclick = function () {
         acname='Anonymous';
     }
     if (name !=='/clear') {
+        name = name.replace('/*','<strong>');
+        name = name.replace('*/','</strong>');
+        name = name.replace('/~','<i>');
+        name = name.replace('~/','</i>');
+        name = name.replace('/-','<u>');
+        name = name.replace('-/','</u>');
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
     }
@@ -122,6 +128,12 @@ submit.submit = function () {
         acname='Anonymous';
     }
     if (name !=='/clear') {
+        name = name.replace('/*','<strong>');
+        name = name.replace('*/','</strong>');
+        name = name.replace('/~','<i>');
+        name = name.replace('~/','</i>');
+        name = name.replace('/-','<u>');
+        name = name.replace('-/','</u>');
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
     }
