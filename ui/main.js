@@ -3,6 +3,7 @@ var cnt =1;
 var list;
 var newMes;
 
+
 //button.onclick = function (){
     var req = new XMLHttpRequest();
     
@@ -111,6 +112,15 @@ submit.submit = function () {
     }
     
 };
+document.onkeypress = keyPress;
+
+function keyPress(e){
+    var x = e || window.event;
+    var key = (x.keyCode || x.which);
+    if(key == 13 || key == 3){
+        submit.onclick();      
+    }
+}
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
     var isActiv;
@@ -174,3 +184,4 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
     req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message",true);
     req.send(null);
 },1000);
+
