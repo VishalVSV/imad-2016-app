@@ -16,6 +16,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/:path', function (req, res) {
+  var p = req.params.path;
+  res.sendFile(path.join(__dirname, 'ui', p + ".html"));
+});
+
 app.get('/chat',function(req,res){
     app.emit('open');
     res.sendFile(path.join(__dirname,'ui','Chat.html'));
