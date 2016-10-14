@@ -61,7 +61,10 @@ submit.onclick = function () {
               var chm = document.getElementById('chmes');
               list = list.replace('/*','<strong>');
               list = list.replace('*/','</strong>');
-              
+              list = list.replace('/~','<i>');
+              list = list.replace('~/','</i>');
+              list = list.replace('/-','<u>');
+              list = list.replace('-/','</u>');
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -104,6 +107,10 @@ submit.submit = function () {
               var chm = document.getElementById('chmes');
               list = list.replace('/*','<strong>');
               list = list.replace('*/','</strong>');
+              list = list.replace('/~','<i>');
+              list = list.replace('~/','</i>');
+              list = list.replace('/-','<u>');
+              list = list.replace('-/','</u>');
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -187,6 +194,10 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                 }
                 list = list.replace('/*','<strong>');
                 list = list.replace('*/','</strong>');
+                list = list.replace('/~','<i>');
+                list = list.replace('~/','</i>');
+                list = list.replace('/-','<u>');
+                list = list.replace('-/','</u>');
                 chm.innerHTML = '' + list;
               }
           }
