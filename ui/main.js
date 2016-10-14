@@ -153,12 +153,14 @@ submit.submit = function () {
         var temp = name;
         var count = (temp.match(/is/g) || []).length;
 
-        name = name.replace('/*','<strong>');
-        name = name.replace('*/','</strong>');
-        name = name.replace('/~','<i>');
-        name = name.replace('~/','</i>');
-        name = name.replace('/-','<u>');
-        name = name.replace('-/','</u>');
+        for (e = 0;e<occurrences(name,"/");e++){
+            name = name.replace('/*','<strong>');
+            name = name.replace('*/','</strong>');
+            name = name.replace('/~','<i>');
+            name = name.replace('~/','</i>');
+            name = name.replace('/-','<u>');
+            name = name.replace('-/','</u>');
+        }
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
     }
