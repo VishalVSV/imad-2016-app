@@ -11,6 +11,26 @@ var splChange = function(str) {
     str = str.replace('-/','</u>');
 };
 
+function occurrences(string, subString, allowOverlapping = false) {
+
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
+
 //button.onclick = function (){
     var req = new XMLHttpRequest();
     
@@ -76,12 +96,14 @@ submit.onclick = function () {
         acname='Anonymous';
     }
     if (name !=='/clear') {
-        name = name.replace('/*','<strong>');
-        name = name.replace('*/','</strong>');
-        name = name.replace('/~','<i>');
-        name = name.replace('~/','</i>');
-        name = name.replace('/-','<u>');
-        name = name.replace('-/','</u>');
+        for (e = 0;e<occurrences(name,"/");e++){
+            name = name.replace('/*','<strong>');
+            name = name.replace('*/','</strong>');
+            name = name.replace('/~','<i>');
+            name = name.replace('~/','</i>');
+            name = name.replace('/-','<u>');
+            name = name.replace('-/','</u>');
+        }
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
     }
@@ -128,6 +150,9 @@ submit.submit = function () {
         acname='Anonymous';
     }
     if (name !=='/clear') {
+        var temp = name;
+        var count = (temp.match(/is/g) || []).length;
+
         name = name.replace('/*','<strong>');
         name = name.replace('*/','</strong>');
         name = name.replace('/~','<i>');
