@@ -154,8 +154,8 @@ submit.submit = function () {
         var count = (temp.match(/is/g) || []).length;
 
         for (e = 0;e<occurrences(name,"/");e++){
-            name = name.replace('/cr','<span style="color:red;">');
-            name = name.replace('cr/','</span>');
+            name = name.replace('/r','<span style="color:red;">');
+            name = name.replace('r/','</span>');
             name = name.replace('/cb','<span style="color:blue;">');
             name = name.replace('cb/','</span>');
             name = name.replace('/cg','<span style="color:green;">');
