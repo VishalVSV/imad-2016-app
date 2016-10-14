@@ -32,7 +32,9 @@ var nameInput = document.getElementById('name');
 var chname=document.getElementById('chname');
 var name = nameInput.value;
 var submit = document.getElementById('submit');
-submit.onclick = function () {
+submit.onclick = sub();
+submit.submit = sub();
+var sub = function () {
     
     //button.onclick = function (){
     var req = new XMLHttpRequest();
