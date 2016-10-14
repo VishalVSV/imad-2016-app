@@ -74,7 +74,7 @@ submit.onclick = function () {
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
     var isActiv;
-
+    
     window.onfocus = function () { 
       isActiv = true; 
     }; 
@@ -110,6 +110,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               }
               
               var chm = document.getElementById('chmes');
+              chm.style.fontSize = "20px";
               //console.log(list);
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
