@@ -177,7 +177,8 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                         document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
                     }
                 }
-                
+                list = list.replace('/*','<strong>');
+                list = list.replace('*/','</strong>');
                 chm.innerHTML = '' + list;
               }
           }
