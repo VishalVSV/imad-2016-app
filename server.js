@@ -16,6 +16,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+
 app.get('/:path', function (req, res) {
   var p = req.params.path;
   res.sendFile(path.join(__dirname, 'ui', p + ".html"));
@@ -54,6 +56,11 @@ app.get('/submit-message',function (req,res) {
         res.send(JSON.stringify(names));
      }
     }
+});
+
+app.get('/cls/chat',function (req,res) {
+  names = [];
+  res.send('Done');
 });
 
 app.get('/:articleName', function (req, res) {
