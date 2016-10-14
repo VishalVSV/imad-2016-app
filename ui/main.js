@@ -2,7 +2,14 @@ var button = document.getElementById('counter');
 var cnt =1;
 var list;
 var newMes;
-
+var splChange = function(str) {
+    str = str.replace('/*','<strong>');
+    str = str.replace('*/','</strong>');
+    str = str.replace('/~','<i>');
+    str = str.replace('~/','</i>');
+    str = str.replace('/-','<u>');
+    str = str.replace('-/','</u>');
+};
 
 //button.onclick = function (){
     var req = new XMLHttpRequest();
@@ -54,6 +61,7 @@ submit.onclick = function () {
               var chm = document.getElementById('chmes');
               list = list.replace('/*','<strong>');
               list = list.replace('*/','</strong>');
+              splChange(list);
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -94,8 +102,7 @@ submit.submit = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              list = list.replace('/*','<strong>');
-              list = list.replace('*/','</strong>');
+              
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -177,8 +184,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                         document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
                     }
                 }
-                list = list.replace('/*','<strong>');
-                list = list.replace('*/','</strong>');
+                splChange(list);
                 chm.innerHTML = '' + list;
               }
           }
