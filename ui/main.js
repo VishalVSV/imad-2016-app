@@ -102,7 +102,7 @@ submit.submit = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-              
+              splChange(list);
               chm.innerHTML = list;
               nameInput.value = "";
           }
