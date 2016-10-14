@@ -1,5 +1,7 @@
 var button = document.getElementById('counter');
 var cnt =1;
+var list;
+var newMes;
 
 //button.onclick = function (){
     var req = new XMLHttpRequest();
@@ -71,9 +73,16 @@ submit.onclick = function () {
 };
 console.log("timer started!");
 var time = setInterval(function(){var req = new XMLHttpRequest();
-    source.addEventListener('open', function(e) {
-      console.log('Opened');
-    }, false);
+    var isActiv;
+
+    window.onfocus = function () { 
+      isActiv = true; 
+    }; 
+
+    window.onblur = function () { 
+      isActiv = false; 
+    }; 
+
     //console.log("looped");
     req.onreadystatechange = function () {
       if(req.readyState === XMLHttpRequest.DONE) {
@@ -81,6 +90,8 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               console.log("worked");
               var names = req.responseText;
               names = JSON.parse(names);
+              var oldList ="";
+              
               var list = '';
               for (var x = 0;x<names.length;x++){
                 //if (names[x].trim() !== null || names[x].trim() !== "" || names[x].trim() !== " ") {
@@ -90,6 +101,9 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                     }else{
                         console.log('added');
                         list += "<p class=\"chmes\">" + names[x] + '</p>';
+                        if (list.length <= oldList.length) {
+                            newMes += 1;
+                        }
                     }
                 //}
                 
@@ -97,11 +111,14 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               
               var chm = document.getElementById('chmes');
               //console.log(list);
-              for (f = 0;f<list.length;f++){
-                
-              }
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
+                if (isActiv === true) {
+                    document.getElementById("chtitle").innerHTML = "Vishal's Chat";
+                }else{
+                    document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
+                }
+                
                 chm.innerHTML = '' + list;
               }
           }
