@@ -143,7 +143,7 @@ var submit = document.getElementById('submit');
 //    
 //};
 
-submit.submit = function () {
+submit.onclick = function () {
     
     //button.onclick = function (){
     var req = new XMLHttpRequest();
