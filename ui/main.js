@@ -71,77 +71,77 @@ var nameInput = document.getElementById('name');
 var chname=document.getElementById('chname');
 var name = nameInput.value;
 var submit = document.getElementById('submit');
-submit.onclick = function () {
+//submit.onclick = function () {
     
-    button.onclick = function (){
-    var req = new XMLHttpRequest();
-    
-    req.onreadystatechange = function () {
-      if(req.readyState === XMLHttpRequest.DONE) {
-          if(req.status === 200) {
-              var names = req.responseText;
-              names = JSON.parse(names);
-              var list = '';
-              for (var x = 0;x<names.length;x++){
-                  if (names[x] === '' || names[x] === null) {
-                      
-                  }else{
-                    list += '<p class="chmes">' + names[x] + '</p>';
-                  }
-              }
-              var chm = document.getElementById('chmes');
-              list = list.replace('/*','<strong>');
-              list = list.replace('*/','</strong>');
-              list = list.replace('/~','<i>');
-              list = list.replace('~/','</i>');
-              list = list.replace('/-','<u>');
-              list = list.replace('-/','</u>');
-              chm.innerHTML = list;
-              nameInput.value = "";
-          }
-
-    }
-    name =nameInput.value;
-    var acname =chname.value;
-    if(acname===''){
-        acname='Anonymous';
-    }
-    if (name !=='/clear') {
-        for (e = 0;e<occurrences(name,"/");e++){
-            name = name.replace('/r','<span style="color:red;">');
-            name = name.replace('r/','</span>');
-            name = name.replace('/b','<span style="color:blue;">');
-            name = name.replace('b/','</span>');
-            name = name.replace('/g','<span style="color:green;">');
-            name = name.replace('g/','</span>');
-            name = name.replace('/*','<strong>');
-            name = name.replace('*/','</strong>');
-            name = name.replace('/~','<i>');
-            name = name.replace('~/','</i>');
-            name = name.replace('/-','<u>');
-            name = name.replace('-/','</u>');
-            acname = acname.replace('/r','<span style="color:red;">');
-            acname = acname.replace('r/','</span>');
-            acname = acname.replace('/b','<span style="color:blue;">');
-            acname = acname.replace('b/','</span>');
-            acname = acname.replace('/g','<span style="color:green;">');
-            acname = acname.replace('g/','</span>');
-            acname = acname.replace('/*','<strong>');
-            acname = acname.replace('*/','</strong>');
-            acname = acname.replace('/~','<i>');
-            acname = acname.replace('~/','</i>');
-            acname = acname.replace('/-','<u>');
-            acname = acname.replace('-/','</u>');
-        }
-        req.open('GET',"http:vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
-        req.send(null);
-    }
-    else{
-        var chm = document.getElementById('chmes');
-        chm.innerHTML = '';
-    }
-    
-};
+    //button.onclick = function (){
+//    var req = new XMLHttpRequest();
+//    
+//    req.onreadystatechange = function () {
+//      if(req.readyState === XMLHttpRequest.DONE) {
+//          if(req.status === 200) {
+//              var names = req.responseText;
+//              names = JSON.parse(names);
+//              var list = '';
+//              for (var x = 0;x<names.length;x++){
+//                  if (names[x] === '' || names[x] === null) {
+//                      
+//                  }else{
+//                    list += '<p class="chmes">' + names[x] + '</p>';
+//                  }
+//              }
+//              var chm = document.getElementById('chmes');
+//              list = list.replace('/*','<strong>');
+//              list = list.replace('*/','</strong>');
+//              list = list.replace('/~','<i>');
+//              list = list.replace('~/','</i>');
+//              list = list.replace('/-','<u>');
+//              list = list.replace('-/','</u>');
+//              chm.innerHTML = list;
+//              nameInput.value = "";
+//          }
+//
+//    };
+//    name =nameInput.value;
+//    var acname =chname.value;
+//    if(acname===''){
+//        acname='Anonymous';
+//    }
+//    if (name !=='/clear') {
+//        for (e = 0;e<occurrences(name,"/");e++){
+//            name = name.replace('/r','<span style="color:red;">');
+//            name = name.replace('r/','</span>');
+//            name = name.replace('/b','<span style="color:blue;">');
+//            name = name.replace('b/','</span>');
+//            name = name.replace('/g','<span style="color:green;">');
+//            name = name.replace('g/','</span>');
+//            name = name.replace('/*','<strong>');
+//            name = name.replace('*/','</strong>');
+//            name = name.replace('/~','<i>');
+//            name = name.replace('~/','</i>');
+//            name = name.replace('/-','<u>');
+//            name = name.replace('-/','</u>');
+//            acname = acname.replace('/r','<span style="color:red;">');
+//            acname = acname.replace('r/','</span>');
+//            acname = acname.replace('/b','<span style="color:blue;">');
+//            acname = acname.replace('b/','</span>');
+//            acname = acname.replace('/g','<span style="color:green;">');
+//            acname = acname.replace('g/','</span>');
+//            acname = acname.replace('/*','<strong>');
+//            acname = acname.replace('*/','</strong>');
+//            acname = acname.replace('/~','<i>');
+//            acname = acname.replace('~/','</i>');
+//            acname = acname.replace('/-','<u>');
+//            acname = acname.replace('-/','</u>');
+//        }
+//        req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
+//        req.send(null);
+//    }
+//    else{
+//        var chm = document.getElementById('chmes');
+//        chm.innerHTML = '';
+//    }
+//    
+//};
 
 submit.onclick = function () {
     
@@ -188,7 +188,7 @@ submit.onclick = function () {
         var temp = name;
         var count = (temp.match(/is/g) || []).length;
 
-        for (e = 0;e<occurrences(name,"/")+10;e++){
+        for (e = 0;e<occurrences(name,"/");e++){
             name = name.replace('/r','<span style="color:red;">');
             name = name.replace('r/','</span>');
             name = name.replace('/b','<span style="color:blue;">');
@@ -297,4 +297,3 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
     req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message",true);
     req.send(null);
 },1000);
-
