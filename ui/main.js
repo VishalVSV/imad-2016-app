@@ -189,7 +189,7 @@ submit.onclick = function () {
         var count = (temp.match(/is/g) || []).length;
 
         for (e = 0;e<occurrences(name,"/")+10;e++){
-            /*name = name.replace('/r','<span style="color:red;">');
+            name = name.replace('/r','<span style="color:red;">');
             name = name.replace('r/','</span>');
             name = name.replace('/b','<span style="color:blue;">');
             name = name.replace('b/','</span>');
