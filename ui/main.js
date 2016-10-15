@@ -162,6 +162,7 @@ submit.onclick = function () {
                   }
               }
               var chm = document.getElementById('chmes');
+              for (e = 0;e<occurrences(name,"/");e++){
                 list = list.replace('/r','<span style="color:red;">');
                 list = list.replace('r/','</span>');
                 list = list.replace('/b','<span style="color:blue;">');
@@ -174,6 +175,7 @@ submit.onclick = function () {
                 list = list.replace('~/','</i>');
                 list = list.replace('/-','<u>');
                 list = list.replace('-/','</u>');
+              }
               chm.innerHTML = list;
               nameInput.value = "";
           }
@@ -275,18 +277,20 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               //console.log(list);
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
-                list = list.replace('/r','<span style="color:red;">');
-                list = list.replace('r/','</span>');
-                list = list.replace('/b','<span style="color:blue;">');
-                list = list.replace('b/','</span>');
-                list = list.replace('/g','<span style="color:green;">');
-                list = list.replace('g/','</span>');
-                list = list.replace('/*','<strong>');
-                list = list.replace('*/','</strong>');
-                list = list.replace('/~','<i>');
-                list = list.replace('~/','</i>');
-                list = list.replace('/-','<u>');
-                list = list.replace('-/','</u>');
+                for (e = 0;e<occurrences(name,"/");e++){
+                    list = list.replace('/r','<span style="color:red;">');
+                    list = list.replace('r/','</span>');
+                    list = list.replace('/b','<span style="color:blue;">');
+                    list = list.replace('b/','</span>');
+                    list = list.replace('/g','<span style="color:green;">');
+                    list = list.replace('g/','</span>');
+                    list = list.replace('/*','<strong>');
+                    list = list.replace('*/','</strong>');
+                    list = list.replace('/~','<i>');
+                    list = list.replace('~/','</i>');
+                    list = list.replace('/-','<u>');
+                    list = list.replace('-/','</u>');
+                }
                 chm.innerHTML = '' + list;
               }
           }
