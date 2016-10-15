@@ -11,6 +11,17 @@ var splChange = function(str) {
     str = str.replace('-/','</u>');
 };
 
+function playSound(url){
+  var audio = document.createElement('audio');
+  audio.style.display = "none";
+  audio.src = url;
+  audio.autoplay = true;
+  audio.onended = function(){
+    audio.remove(); //Remove when played.
+  };
+  document.body.appendChild(audio);
+}
+
 function occurrences(string, subString, allowOverlapping = false) {
 
     string += "";
@@ -234,15 +245,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               //console.log(list);
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
-                if (isActiv === true) {
-                    document.getElementById("chtitle").innerHTML = "Vishal's Chat";
-                }else{
-                    if (newMes === undefined) {
-                        
-                    }else {
-                        document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+'1'+')';
-                    }
-                }
+                
                 list = list.replace('/*','<strong>');
                 list = list.replace('*/','</strong>');
                 list = list.replace('/~','<i>');
