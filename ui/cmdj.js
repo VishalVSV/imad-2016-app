@@ -5,3 +5,8 @@ var l$ = function (strp) {
     console.log(strp);
 };
 var chm = d$('chmes');
+var submit = d$('submit');
+
+submit.onclick = function (){
+    
+};
