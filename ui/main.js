@@ -245,7 +245,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               //console.log(list);
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
-                
+                playSound('/ui/whatsappor_uH3POzYW.mp3');
                 list = list.replace('/*','<strong>');
                 list = list.replace('*/','</strong>');
                 list = list.replace('/~','<i>');
