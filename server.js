@@ -60,15 +60,7 @@ app.get('/cls/chat',function (req,res) {
   res.send('Done');
 });
 
-app.get('/:articleName', function (req, res) {
-    var articleName = req.params.articleName;
-    try {
-         res.send(createHtml(articles[articleName]));
-    }
-    catch(e) {
-        res.send("404 Page not found");
-    }
-});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -85,6 +77,16 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/:path', function (req, res) {
   var p = req.params.path;
   res.sendFile(path.join(__dirname, 'ui', p + ".html"));
+});
+
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    try {
+         res.send(createHtml(articles[articleName]));
+    }
+    catch(e) {
+        res.send("404 Page not found");
+    }
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
