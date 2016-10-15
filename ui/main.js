@@ -240,7 +240,7 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
                     if (newMes === undefined) {
                         
                     }else {
-                        document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+newMes+')';
+                        document.getElementById("chtitle").innerHTML = "Vishal's Chat ("+'1'+')';
                     }
                 }
                 list = list.replace('/*','<strong>');
