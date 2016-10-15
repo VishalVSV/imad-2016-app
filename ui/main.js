@@ -121,6 +121,18 @@ submit.onclick = function () {
             name = name.replace('~/','</i>');
             name = name.replace('/-','<u>');
             name = name.replace('-/','</u>');
+            acname = acname.replace('/cr','<span style="color:red;">');
+            acname = acname.replace('cr/','</span>');
+            acname = acname.replace('/cb','<span style="color:blue;">');
+            acname = acname.replace('cb/','</span>');
+            acname = acname.replace('/cg','<span style="color:green;">');
+            acname = acname.replace('cg/','</span>');
+            acname = acname.replace('/*','<strong>');
+            acname = acname.replace('*/','</strong>');
+            acname = acname.replace('/~','<i>');
+            acname = acname.replace('~/','</i>');
+            acname = acname.replace('/-','<u>');
+            acname = acname.replace('-/','</u>');
         }
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
@@ -184,6 +196,18 @@ submit.submit = function () {
             name = name.replace('~/','</i>');
             name = name.replace('/-','<u>');
             name = name.replace('-/','</u>');
+            acname = acname.replace('/cr','<span style="color:red;">');
+            acname = acname.replace('cr/','</span>');
+            acname = acname.replace('/cb','<span style="color:blue;">');
+            acname = acname.replace('cb/','</span>');
+            acname = acname.replace('/cg','<span style="color:green;">');
+            acname = acname.replace('cg/','</span>');
+            acname = acname.replace('/*','<strong>');
+            acname = acname.replace('*/','</strong>');
+            acname = acname.replace('/~','<i>');
+            acname = acname.replace('~/','</i>');
+            acname = acname.replace('/-','<u>');
+            acname = acname.replace('-/','</u>');
         }
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
