@@ -1,14 +1,26 @@
-<!DOCTYPE HTML>
-  <html>
+<!doctype html>
+<html style="font-size:110%;">
     <head>
-        
+        <link href="/ui/style.css" rel="stylesheet" />
+        <title id='chtitle'>Vishal's chat</title>
     </head>
-    
     <body>
-        <div id='out'>
+  
             
-        </div>
-        <input type='text' id='cmd'/>
-        <script src='/ui/cmdjs.js'></script>
+            <div class='footer'>
+                <hr/>
+                <div id='chmes' class='solid'>
+                    
+                    
+                </div>
+                <hr/>
+                
+                <input type='text' id='chname' placeholder='name' autocomplete="off">
+                <input type='text' id='name' placeholder='messages' autocomplete="off">
+                <button type='submit' id='submit'>Send</button>
+                
+            </div>
+        
+        <script type="text/javascript" src="/ui/main.js"></script>
     </body>
-  </html>
+</html>
