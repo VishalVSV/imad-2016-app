@@ -108,24 +108,24 @@ submit.onclick = function () {
     }
     if (name !=='/clear') {
         for (e = 0;e<occurrences(name,"/");e++){
-            name = name.replace('/cr','<span style="color:red;">');
-            name = name.replace('cr/','</span>');
-            name = name.replace('/cb','<span style="color:blue;">');
-            name = name.replace('cb/','</span>');
-            name = name.replace('/cg','<span style="color:green;">');
-            name = name.replace('cg/','</span>');
+            name = name.replace('/r','<span style="color:red;">');
+            name = name.replace('r/','</span>');
+            name = name.replace('/b','<span style="color:blue;">');
+            name = name.replace('b/','</span>');
+            name = name.replace('/g','<span style="color:green;">');
+            name = name.replace('g/','</span>');
             name = name.replace('/*','<strong>');
             name = name.replace('*/','</strong>');
             name = name.replace('/~','<i>');
             name = name.replace('~/','</i>');
             name = name.replace('/-','<u>');
             name = name.replace('-/','</u>');
-            acname = acname.replace('/cr','<span style="color:red;">');
-            acname = acname.replace('cr/','</span>');
-            acname = acname.replace('/cb','<span style="color:blue;">');
-            acname = acname.replace('cb/','</span>');
-            acname = acname.replace('/cg','<span style="color:green;">');
-            acname = acname.replace('cg/','</span>');
+            acname = acname.replace('/r','<span style="color:red;">');
+            acname = acname.replace('r/','</span>');
+            acname = acname.replace('/b','<span style="color:blue;">');
+            acname = acname.replace('b/','</span>');
+            acname = acname.replace('/g','<span style="color:green;">');
+            acname = acname.replace('g/','</span>');
             acname = acname.replace('/*','<strong>');
             acname = acname.replace('*/','</strong>');
             acname = acname.replace('/~','<i>');
@@ -162,12 +162,12 @@ submit.submit = function () {
                   }
               }
               var chm = document.getElementById('chmes');
-                list = list.replace('/cr','<span style="color:red;">');
-                list = list.replace('cr/','</span>');
-                list = list.replace('/cb','<span style="color:blue;">');
-                list = list.replace('cb/','</span>');
-                list = list.replace('/cg','<span style="color:green;">');
-                list = list.replace('cg/','</span>');
+                list = list.replace('/r','<span style="color:red;">');
+                list = list.replace('r/','</span>');
+                list = list.replace('/b','<span style="color:blue;">');
+                list = list.replace('b/','</span>');
+                list = list.replace('/g','<span style="color:green;">');
+                list = list.replace('g/','</span>');
                 list = list.replace('/*','<strong>');
                 list = list.replace('*/','</strong>');
                 list = list.replace('/~','<i>');
@@ -189,24 +189,24 @@ submit.submit = function () {
         var count = (temp.match(/is/g) || []).length;
 
         for (e = 0;e<occurrences(name,"/");e++){
-            name = name.replace('/cr','<span style="color:red;">');
-            name = name.replace('cr/','</span>');
-            name = name.replace('/cb','<span style="color:blue;">');
-            name = name.replace('cb/','</span>');
-            name = name.replace('/cg','<span style="color:green;">');
-            name = name.replace('cg/','</span>');
+            name = name.replace('/r','<span style="color:red;">');
+            name = name.replace('r/','</span>');
+            name = name.replace('/b','<span style="color:blue;">');
+            name = name.replace('b/','</span>');
+            name = name.replace('/g','<span style="color:green;">');
+            name = name.replace('g/','</span>');
             name = name.replace('/*','<strong>');
             name = name.replace('*/','</strong>');
             name = name.replace('/~','<i>');
             name = name.replace('~/','</i>');
             name = name.replace('/-','<u>');
             name = name.replace('-/','</u>');
-            acname = acname.replace('/cr','<span style="color:red;">');
-            acname = acname.replace('cr/','</span>');
-            acname = acname.replace('/cb','<span style="color:blue;">');
-            acname = acname.replace('cb/','</span>');
-            acname = acname.replace('/cg','<span style="color:green;">');
-            acname = acname.replace('cg/','</span>');
+            acname = acname.replace('/r','<span style="color:red;">');
+            acname = acname.replace('r/','</span>');
+            acname = acname.replace('/b','<span style="color:blue;">');
+            acname = acname.replace('b/','</span>');
+            acname = acname.replace('/g','<span style="color:green;">');
+            acname = acname.replace('g/','</span>');
             acname = acname.replace('/*','<strong>');
             acname = acname.replace('*/','</strong>');
             acname = acname.replace('/~','<i>');
@@ -275,12 +275,12 @@ var time = setInterval(function(){var req = new XMLHttpRequest();
               //console.log(list);
               if (chm.innerHTML!==list){
                 console.log(list+"Updated"+chm.innerHTML);
-                list = list.replace('/cr','<span style="color:red;">');
-                list = list.replace('cr/','</span>');
-                list = list.replace('/cb','<span style="color:blue;">');
-                list = list.replace('cb/','</span>');
-                list = list.replace('/cg','<span style="color:green;">');
-                list = list.replace('cg/','</span>');
+                list = list.replace('/r','<span style="color:red;">');
+                list = list.replace('r/','</span>');
+                list = list.replace('/b','<span style="color:blue;">');
+                list = list.replace('b/','</span>');
+                list = list.replace('/g','<span style="color:green;">');
+                list = list.replace('g/','</span>');
                 list = list.replace('/*','<strong>');
                 list = list.replace('*/','</strong>');
                 list = list.replace('/~','<i>');
