@@ -96,6 +96,7 @@ submit.onclick = function () {
               list = list.replace('~/','</i>');
               list = list.replace('/-','<u>');
               list = list.replace('-/','</u>');
+              playSound('/ui/whatsappor_uH3POzYW.mp3');
               chm.innerHTML = list;
               nameInput.value = "";
           }
