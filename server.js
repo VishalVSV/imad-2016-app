@@ -12,6 +12,10 @@ app.on('c', function (stream) {
 
 app.emit('c');
 
+app.get('/c', function (req,res) {
+     res.redirect('/chat');
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
