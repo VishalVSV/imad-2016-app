@@ -20,6 +20,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get ('/chat/:grpname', function (req,res) {
+    if (req.params.grpname === null){
+        res.redirect('/chat');
+    }    
+});
+
 app.get('/chat',function(req,res){
     app.emit('open');
     res.sendFile(path.join(__dirname,'ui','Chat.html'));
