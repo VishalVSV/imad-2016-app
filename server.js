@@ -71,7 +71,7 @@ app.get('/submit-message',function (req,res) {
         var namte = req.query.name;
         var grpn = req.params.grp;
         if (grpn in grps) {
-            grps[grpn].push(namet);
+            grps[grpn].push(namte);
             var namesRefinedt = [];
             for(k=0;k<names.length;k++){
                 if (grps[grpn][k] === null || grps[grpn][k] === undefined) {
