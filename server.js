@@ -46,8 +46,8 @@ app.get('/counter', function (req, res) {
 
 
 var names = [];
-app.get('/:grp/submit-message',function (req,res) {
-    if (req.params.grp === null) {
+app.get('/submit-message',function (req,res) {
+    if (req.query.grp === null) {
         if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
          var name = req.query.name;
          if (name === "" || name === null) {
