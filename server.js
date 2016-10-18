@@ -23,6 +23,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get ('/chat/:grp', function (req,res) {
+    if(req.params.grp === null) {
+        res.redirect('chat');
+    } 
+});
 
 app.get('/chat',function(req,res){
     app.emit('open');
@@ -41,7 +46,7 @@ app.get('/counter', function (req, res) {
 
 
 var names = [];
-app.get('/submit-message/:grp',function (req,res) {
+app.get('/:grp/submit-message',function (req,res) {
     if (req.params.grp === null) {
         if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
          var name = req.query.name;
