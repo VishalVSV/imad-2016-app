@@ -2,6 +2,9 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
+var grps = {
+    
+};
 
 var app = express();
 app.use(morgan('combined'));
@@ -20,11 +23,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get ('/chat/:grpname', function (req,res) {
-    if (req.params.grpname === null){
-        res.redirect('/chat');
-    }    
-});
 
 app.get('/chat',function(req,res){
     app.emit('open');
@@ -43,25 +41,45 @@ app.get('/counter', function (req, res) {
 
 
 var names = [];
-app.get('/submit-message',function (req,res) {
-    if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
-     var name = req.query.name;
-     if (name === "" || name === null) {
-         
-     }
-     else{
-        names.push(name);
-        var namesRefined = [];
-        for(k=0;k<names.length;k++){
-            if (names[k] === null || names[k] === undefined) {
-            
-            }else{
-                namesRefined.push(names[k]);
+app.get('/submit-message/:grp',function (req,res) {
+    if (req.params.grp === null) {
+        if(req.query.name!==null || req.query.name!=='' || req.query.name !== " " || req.query.name!="  "){
+         var name = req.query.name;
+         if (name === "" || name === null) {
+             
+         }
+         else{
+            names.push(name);
+            var namesRefined = [];
+            for(k=0;k<names.length;k++){
+                if (names[k] === null || names[k] === undefined) {
+                
+                }else{
+                    namesRefined.push(names[k]);
+                }
             }
+            console.log(namesRefined);
+            res.send(JSON.stringify(names));
+         }
         }
-        console.log(namesRefined);
-        res.send(JSON.stringify(names));
-     }
+    }else {
+        var namte = req.query.name;
+        var grpn = req.params.grp;
+        if (grpn in grps) {
+            grps[grpn].push(namet);
+            var namesRefinedt = [];
+            for(k=0;k<names.length;k++){
+                if (grps[grpn][k] === null || grps[grpn][k] === undefined) {
+                
+                }else{
+                    namesRefinedt.push(grps[grpn][k]);
+                }
+            }
+            console.log(namesRefinedt);
+            res.send(JSON.stringify(namesRefinedt));
+        }else {
+            grps[grpn] = [];
+        }
     }
 });
 
