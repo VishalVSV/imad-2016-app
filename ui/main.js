@@ -217,7 +217,7 @@ submit.onclick = function () {
             acname = acname.replace('-/','</u>');
         }
         if (acname == 'Dinnerbone') {
-            //acname = 'p\u1D09uu\u01DD\u0279qou\u01DD';
+            acname = 'p\u1D09uu\u01DD\u0279qou\u01DD';
         }
         req.open('GET',"http://vishalvsv.imad.hasura-app.io/submit-message?name="+acname+":"+name,true);
         req.send(null);
