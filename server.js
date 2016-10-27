@@ -8,6 +8,7 @@ child_process.exec(__dirname+'/temp.bat', function(error, stdout, stderr) {
     console.log(stdout);
 });
 
+var io = require("socket.io");
 var app = express();
 app.use(morgan('combined'));
 
