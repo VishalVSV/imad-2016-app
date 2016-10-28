@@ -7,6 +7,7 @@ var exec = require('child_process').exec;
 var cmd = 'dir';
 
 exec(cmd, function(error, stdout, stderr) {
+    console.log("dir");
   console.log(stdout);
 });
 var app = express();
