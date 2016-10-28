@@ -4,11 +4,11 @@ var path = require('path');
 var e = require('events');
 //var io = require('socket.io');
 var exec = require('child_process').exec;
-var cmd = 'ls';
+var cmd = 'npm install socket.io';
 
 exec(cmd, function(error, stdout, stderr) {
     console.log("dir");
-  console.log(stdout);
+    console.log(stdout);
 });
 var app = express();
 
