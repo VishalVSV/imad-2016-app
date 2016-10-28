@@ -3,19 +3,15 @@ var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
 var app = express();
-var spawn = require('child_process').spawn,
-ls    = spawn('cmd.exe', ['/c', __dirname+'temp.bat']);
+require('child_process').exec(__dirname+"/temp.bat", function (err, stdout, stderr) {
+    if (err) {
+        // Ooops.
+        // console.log(stderr);
+        return console.log(err);
+    }
 
-ls.stdout.on('data', function (data) {
-console.log('stdout: ' + data);
-});
-
-ls.stderr.on('data', function (data) {
-console.log('stderr: ' + data);
-});
-
-ls.on('exit', function (code) {
-console.log('child process exited with code ' + code);
+    // Done.
+    console.log(stdout);
 });
 
 app.use(morgan('combined'));
