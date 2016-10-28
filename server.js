@@ -10,7 +10,7 @@ exec(cmd, function(error, stdout, stderr) {
     console.log(stdout);
 });
 var app = express();
-
+var io = require('socket.io');
 app.use(morgan('combined'));
 
 app.on('c', function (stream) {
