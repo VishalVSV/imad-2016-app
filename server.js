@@ -15,7 +15,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.on('c', function (stream) {
-  console.log("*=============================================*");
+  console.log("*-----------------------------------------*");
 });
 
 app.emit('c');
