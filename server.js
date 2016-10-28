@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
 var app = express();
+
 app.use(morgan('combined'));
 
 app.on('c', function (stream) {
