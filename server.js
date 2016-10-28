@@ -4,7 +4,7 @@ var path = require('path');
 var e = require('events');
 //var io = require('socket.io');
 var exec = require('child_process').exec;
-var cmd = 'dir';
+var cmd = 'ls';
 
 exec(cmd, function(error, stdout, stderr) {
     console.log("dir");
