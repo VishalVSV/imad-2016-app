@@ -3,10 +3,12 @@ var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
 //var io = require('socket.io');
-var sys = require('sys');
 var exec = require('child_process').exec;
-function puts(error, stdout, stderr) { sys.puts(stdout) }
-exec("ls", puts);
+var cmd = 'npm install -g';
+
+exec(cmd, function(error, stdout, stderr) {
+    console.log(stdout);
+});
 var app = express();
 
 app.use(morgan('combined'));
