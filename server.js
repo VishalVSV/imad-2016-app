@@ -2,8 +2,13 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
-var io = require('socket.io');
+//var io = require('socket.io');
+var exec = require('child_process').exec;
+var cmd = 'dir';
 
+exec(cmd, function(error, stdout, stderr) {
+  console.log(stdout);
+});
 var app = express();
 
 app.use(morgan('combined'));
