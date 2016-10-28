@@ -2,13 +2,10 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
-var app = express();
-var exec = require('child_process').exec;
-var cmd = 'npm install socket.io';
+var io = require('socket.io');
 
-exec(cmd, function(error, stdout, stderr) {
-  console.log(stdout);
-});
+var app = express();
+
 app.use(morgan('combined'));
 
 app.on('c', function (stream) {
