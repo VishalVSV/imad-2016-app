@@ -3,17 +3,12 @@ var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
 var app = express();
-require('child_process').exec(__dirname+"/temp.bat", function (err, stdout, stderr) {
-    if (err) {
-        // Ooops.
-        // console.log(stderr);
-        return console.log(err);
-    }
+var exec = require('child_process').exec;
+var cmd = 'npm install socket.io';
 
-    // Done.
-    console.log(stdout);
+exec(cmd, function(error, stdout, stderr) {
+  console.log(stdout);
 });
-
 app.use(morgan('combined'));
 
 app.on('c', function (stream) {
