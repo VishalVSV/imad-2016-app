@@ -4,7 +4,7 @@ var path = require('path');
 var e = require('events');
 var app = express();
 var spawn = require('child_process').spawn,
-ls    = spawn('cmd.exe', ['/c', 'temp.bat']);
+ls    = spawn('cmd.exe', ['/c', __dirname+'temp.bat']);
 
 ls.stdout.on('data', function (data) {
 console.log('stdout: ' + data);
