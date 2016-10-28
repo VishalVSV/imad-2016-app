@@ -10,9 +10,14 @@ exec(cmd, function(error, stdout, stderr) {
     console.log(stdout);
 });
 var app = express();
-var io = require('socket.io');
-app.use(morgan('combined'));
 
+app.use(morgan('combined'));
+var exec = require('child_process').exec;
+var cmd = 'ls';
+
+exec(cmd, function(error, stdout, stderr) {
+    console.log(stdout);
+});
 app.on('c', function (stream) {
   console.log("*-----------------------------------------*");
 });
