@@ -4,6 +4,13 @@ var path = require('path');
 var e = require('events');
 //var io = require('socket.io');
 console.log(__dirname);
+//
+var exec = require('child_process').exec;
+var cmd = 'ls /usr/lib/node_modules/imad-2016-base';
+
+exec(cmd, function(error, stdout, stderr) {
+  console.log(stdout);
+});
 var app = express();
 app.use(morgan('combined'));
 
