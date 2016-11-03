@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/rubium-download', function (req, res) {
-  res.download(__dirname+"rubiumv1.exe");
-  res.download(__dirname+"rubiumv1.pdb");
+  res.download(__dirname+"/rubiumv1.exe");
+  res.download(__dirname+"/rubiumv1.pdb");
 });
 
 app.get('/chat',function(req,res){
