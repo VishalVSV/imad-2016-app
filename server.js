@@ -17,7 +17,7 @@ function htmlCreate (data) {
     <html>
         <head><title>${data.name}</title></head>
         <body>
-            <span style='font-weight: bold'>${data.name}</span> <span style="text-align:right">by ${data.author}</span><hr/>
+            <span style='font-weight: bold;font-size:200px;'>${data.name}</span> <span style="text-align:right;font-size:200px;">by ${data.author}</span><hr/>
             ${data.content}
         </body>
     </html>
