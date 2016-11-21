@@ -2,6 +2,15 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var e = require('events');
+var Pool = require('pg').Pool;
+
+var config = {
+    host:'http://db.imad.hasura-app.io/',
+    port: '5432',
+    user: 'vishalvsv',
+    database: 'vishalvsv',
+    password:'db-vishalvsv-30303'
+};
 
 console.log(__dirname);
 //
@@ -38,6 +47,12 @@ app.get('/chat',function(req,res){
     res.sendFile(path.join(__dirname,'ui','Chat.html'));
 });
 
+var pool = new Pool(config);
+app.get('/db',function(req,res){
+    pool.query('SELECT * FROM test',function(err,result){
+        res.send(JSON.stringify(result)); 
+    });
+});
 
 
 
