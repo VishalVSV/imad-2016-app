@@ -66,7 +66,7 @@ app.get('/db/:articleName',function(req,res){
                 res.send(err.toString());
             }
             else{
-                if (result.rows[0] ===0){res.send("404")}else{
+                if (result.rows[0].length ===0){res.send("404")}else{
                     res.send(htmlCreate(result.rows[0])); 
                 }
             }
