@@ -5,7 +5,7 @@ var e = require('events');
 var Pool = require('pg').Pool;
 
 var config = {
-    host:'http://db.imad.hasura-app.io/',
+    host:'db.imad.hasura-app.io',
     port: '5432',
     user: 'vishalvsv',
     database: 'vishalvsv',
