@@ -66,7 +66,9 @@ app.get('/db/:articleName',function(req,res){
                 res.send(err.toString());
             }
             else{
-                res.send(htmlCreate(result.rows[0])); 
+                if (result.rows[0] ===0){res.send("404")}else{
+                    res.send(htmlCreate(result.rows[0])); 
+                }
             }
         });
 });
